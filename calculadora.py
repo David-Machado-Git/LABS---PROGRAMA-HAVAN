@@ -48,8 +48,7 @@ while True:
 
         else:
             while True:
-                print(
-                    f'\033[1;41mVALOR INVÁLIDO - SOMENTE NÚMEROS DE 1 A 4 QUE CORRESPONDEM AS MOEDAS CADASTRADAS:\033[0;0m')
+                print(f'\033[1;41mVALOR INVÁLIDO - SOMENTE NÚMEROS DE 1 A 4 QUE CORRESPONDEM AS MOEDAS CADASTRADAS:\033[0;0m')
                 moeda_origem = str(input('Digite corretamente o cód da moeda de origem:?'))
                 if moeda_origem == '1':
                     print('--' * 35)
