@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3adcd8c8-9a2f-40fd-a0ed-d56266ccd1f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gerenciador_operacoes.py" afterDir="false" />
+    <list default="true" id="3adcd8c8-9a2f-40fd-a0ed-d56266ccd1f5" name="Default Changelist" comment="SEGUNDO PROGRAMA - GERENCIADOR - OPERAÇÕES. LABS HAVAN.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculadora.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gerenciador_operacoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador_operacoes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620922557134</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="SEGUNDO PROGRAMA - GERENCIADOR - OPERAÇÕES. LABS HAVAN.">
+      <created>1620938783295</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620938783295</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +141,7 @@
     <MESSAGE value="CÓDIGOS LABS HAVAN - DIA 11/05/2021" />
     <MESSAGE value="CONTINUAÇÃO - CALCULADORA - PROGRAMA LABS HAVAN DIA 12/05/2020" />
     <MESSAGE value="CALCULADORA CONVERSÃO DE MOEDAS. LABS HAVAN." />
-    <option name="LAST_COMMIT_MESSAGE" value="CALCULADORA CONVERSÃO DE MOEDAS. LABS HAVAN." />
+    <MESSAGE value="SEGUNDO PROGRAMA - GERENCIADOR - OPERAÇÕES. LABS HAVAN." />
+    <option name="LAST_COMMIT_MESSAGE" value="SEGUNDO PROGRAMA - GERENCIADOR - OPERAÇÕES. LABS HAVAN." />
   </component>
 </project>

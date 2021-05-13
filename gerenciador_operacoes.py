@@ -67,11 +67,11 @@ while True:
             print('--' * 30)
             data_operacao = str(input('Data da operação:?'))
             print('--' * 30)
-            valor_original = str(input('Valor original:?'))
+            valor_original = str(input('Valor original:?{Sigla Moeda}:'))
             print('--' * 30)
-            valor_convertido = str(input('Valor convertido:?'))
+            valor_convertido = str(input('Valor convertido:?{Sigla Moeda}:'))
             print('--' * 30)
-            taxa_cobrada = str(input('Taxa cobrada:?'))
+            taxa_cobrada = str(input('Taxa cobrada:?{Sigla Moeda}:'))
 
             break
 
@@ -82,10 +82,10 @@ while True:
             print('(2a) - FALTA CONSTRUIR - ')
 
         elif opcao_menu == '3':
-            print('Faz outra coisa...3')
+            print('(2b) - FALTA CONSTRUIR - ')
 
         elif opcao_menu == '4':
-            print('Faz outra coisa...4')
+            print('(2c) - FALTA CONSTRUIR - ')
 
         else:
             while True:
