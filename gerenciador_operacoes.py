@@ -136,7 +136,7 @@ while True:
 
                 print('--' * 30)
 
-                # --> N <--
+                # --> NÃO APAGAR OS CÓDIGOS ABAIXO <--
                 # --> ESSA SOLUÇÃO SERIA PARA LISTAR TODOS OS CLIENTES E INFORMAÇÕES <--
                 # print(' --------------------  |SEQUÊNCIA E ORDEM DE COLUNAS|  -------------- VALORES -------------')
                 # print('1ºCÓD:|2ºNOME:        |3ºMOED ORIG. |4º MOED DEST.  |5º DATA:   |6ºORIGI:|7ºCONV:|8ºTAXA. ')
@@ -174,7 +174,16 @@ while True:
             print('--' * 35)
             print(f'\033[7;40m{"   RELATÓRIOS --> OPERAÇÕES REALIZADAS  ":*^70}\033[0;0m')
             print('--' * 35)
-            print('(2a) - FALTA CONSTRUIR - ')
+
+            if codigo_cliente == 0:
+                print('--' * 35)
+                print()
+                print()
+                print('\033[1;41mNÃO HÁ NENHUMA OPERAÇÃO REALIZADA ATÉ O MOMENTO !\033[0;0m')
+                print()
+                print()
+                print('--' * 35)
+
 
         elif opcao_menu == '3':
             print('(2b) - FALTA CONSTRUIR - ')
