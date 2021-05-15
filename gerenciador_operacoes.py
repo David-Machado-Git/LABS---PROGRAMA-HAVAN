@@ -1,6 +1,8 @@
 dados = {}
 copia_dados = []
 codigo_cliente = 0
+moeda_origem = 'R$:'
+moeda_destino = 'U$$:'
 
 
 print('--' * 35)
@@ -25,7 +27,7 @@ while True:
                 print(f'\033[7;40m{"   CADASTRAR CLIENTES  ":*^70}\033[0;0m')
                 print('--' * 35)
                 codigo_cliente += 1
-                print(f'Código do Cadastro: {codigo_cliente}')
+                print(f' --> {codigo_cliente}º Cadastro e Nº do Cliente [ {codigo_cliente} ]')
                 dados['Cód'] = [codigo_cliente]
                 # print('--' * 35)
                 # print(f'TESTE DADOS EM FORMA DE DICIONÁRIOS: {dados.values()}')
@@ -49,21 +51,25 @@ while True:
                 if moeda_origem == '1':
                     print('MOEDA DE ORIGEM: - REAL - BRASIL')
                     dados['Moeda origem'] = ['REAL - BRL']
+                    moeda_origem = 'R$:'
                     print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_origem == '2':
                     print('MOEDA DE ORIGEM: - DÓLAR - EUA')
                     dados['Moeda origem'] = ['DÓLAR - EUA']
+                    moeda_origem = 'U$$:'
                     print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_origem == '3':
                     print('MOEDA DE ORIGEM: - EURO - EUROPA')
                     dados['Moeda origem'] = ['EURO']
+                    moeda_origem = '€:'
                     print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_origem == '4':
                     print('MOEDA DE ORIGEM: - DÓLAR - CANADÁ')
                     dados['Moeda origem'] = ['DÓLAR - CAD']
+                    moeda_origem = 'U$$:'
                     print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 print('--' * 30)
@@ -74,6 +80,7 @@ while True:
                 print('       | Digite --> (4) para MOEDA DÓLAR - CANADÁ  |')
                 print('        -------------------------------------------')
                 moeda_destino = str(input('Moeda de destino:?'))
+
                 dados['Moeda destino'] = [moeda_destino]
                 print('--' * 30)
 
@@ -81,21 +88,25 @@ while True:
                 if moeda_destino == '1':
                     print('MOEDA DE DESTINO: - REAL - BRASIL')
                     dados['Moeda destino'] = ['REAL - BRASIL']
+                    moeda_destino = 'R$:'
                     print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_destino == '2':
                     print('MOEDA DE DESTINO: - DÓLAR - EUA')
                     dados['Moeda destino'] = ['DÓLAR - EUA']
+                    moeda_destino = 'U$$:'
                     print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_destino == '3':
                     print('MOEDA DE DESTINO: - EURO - EUROPA')
                     dados['Moeda destino'] = ['EURO']
+                    moeda_destino = '€:'
                     print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_destino == '4':
                     print('MOEDA DE DESTINO: - DÓLAR - CANADÁ')
                     dados['Moeda destino'] = ['DÓLAR CAD']
+                    moeda_destino = 'U$$:'
                     print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 print('--' * 30)
@@ -104,16 +115,16 @@ while True:
                 dados['Data Operação'] = [data_operacao]
                 print(f'TESTE DATA: {dados}')
                 print('--' * 30)
-                valor_original = str(input('Valor original:?{Sigla Moeda}:'))
+                valor_original = str(input(f'Valor original:? {moeda_origem}'))
                 dados['Valor Original'] = [valor_original]
                 print(f'TESTE VALOR ORIGINAL: {dados}')
                 print('--' * 30)
-                valor_convertido = str(input('Valor convertido:?{Sigla Moeda}:'))
+                valor_convertido = str(input(f'Valor convertido:? {moeda_destino}'))
 
                 dados['Valor Convertido'] = [valor_convertido]
                 print(f'TESTE VALOR CONVERTIDO: {dados}')
                 print('--' * 30)
-                taxa_cobrada = str(input('Taxa cobrada:?{Sigla Moeda}:'))
+                taxa_cobrada = str(input(f'Taxa cobrada:? R$:'))
                 dados['Taxa Cobrada'] = [taxa_cobrada]
                 print(f'TESTE LISTA NORMAL DE DADOS: {dados}')
                 print('--' * 30)
@@ -124,14 +135,16 @@ while True:
                 print(f'TESTE LISTA NORMAL DE DADOS: {dados}')
 
                 print('--' * 30)
+
+                # --> N <--
                 # --> ESSA SOLUÇÃO SERIA PARA LISTAR TODOS OS CLIENTES E INFORMAÇÕES <--
-                print(' --------------------  |SEQUÊNCIA E ORDEM DE COLUNAS|  -------------- VALORES -------------')
-                print('1ºCÓD:|2ºNOME:        |3ºMOED ORIG. |4º MOED DEST.  |5º DATA:   |6ºORIGI:|7ºCONV:|8ºTAXA. ')
-                print('---' * 30)
-                for c, v in enumerate(copia_dados):
-                    for d in v.values():
-                        print(f"  {str(d).replace('[','').replace(']','').replace('','')}",end=' ')
-                    print()
+                # print(' --------------------  |SEQUÊNCIA E ORDEM DE COLUNAS|  -------------- VALORES -------------')
+                # print('1ºCÓD:|2ºNOME:        |3ºMOED ORIG. |4º MOED DEST.  |5º DATA:   |6ºORIGI:|7ºCONV:|8ºTAXA. ')
+                # print('---' * 30)
+                # for c, v in enumerate(copia_dados):
+                #     for d in v.values():
+                #         print(f"  {str(d).replace('[','').replace(']','').replace('','')}",end=' ')
+                #     print()
 
 
 
