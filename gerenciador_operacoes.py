@@ -1,3 +1,5 @@
+from time import sleep
+
 dados = {}
 copia_dados = []
 codigo_cliente = 0
@@ -174,15 +176,121 @@ while True:
             print('--' * 35)
             print(f'\033[7;40m{"   RELATÓRIOS --> OPERAÇÕES REALIZADAS  ":*^70}\033[0;0m')
             print('--' * 35)
-
             if codigo_cliente == 0:
                 print('--' * 35)
+                print('        \033[1;40m    Aguarde ! AVERIGUANDO DADOS\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m100%\033[0;0m', end='')
+                print('\033[1;40m   \033[0;0m', end='')
+                print('\n')
+
+                print('--' * 35)
                 print()
                 print()
-                print('\033[1;41mNÃO HÁ NENHUMA OPERAÇÃO REALIZADA ATÉ O MOMENTO !\033[0;0m')
+                print('\033[1;41mATÉ O PRESENTE MOMENTO NÃO HÁ NENHUMA OPERAÇÃO REALIZADA !\033[0;0m')
                 print()
                 print()
                 print('--' * 35)
+                print('--' * 35)
+                print('             \033[1;30m\033[1;43m     VOLTANDO AO MENU PRINCIPAL\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+                print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+                print('\n')
+
+            elif codigo_cliente > 0:
+                print('--' * 35)
+                print('        \033[1;40m    Aguarde ! AVERIGUANDO DADOS\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m100%\033[0;0m', end='')
+                print('\033[1;40m   \033[0;0m', end='')
+                print('\n')
+
+                print('--' * 35)
+                print()
+                print()
+                print(f'\033[1;42mATÉ O PRESENTE MOMENTO VOCÊ TEM UM TOTAL DE: {codigo_cliente} \033[0;0m',end='')
+                if codigo_cliente == 1:
+                    print('\033[1;42mOPERAÇÃO !\033[0;0m')
+                else:
+                    print('\033[1;42mOPERAÇÕES !\033[0;0m')
+                print('--' * 35)
+                print(' -- | ABAIXO SEGUE A LISTA COMPLETA DE TODOS OS CLIENTES CADASTRADOS ATÉ O MOMENTO! | -- ')
+                print('--' * 35)
+                print(' --------------------  |SEQUÊNCIA E ORDEM DE COLUNAS|  -------------- VALORES -------------')
+                print('1ºCÓD:|2ºNOME:        |3ºMOED ORIG. |4º MOED DEST.  |5º DATA:   |6ºORIGI:|7ºCONV:|8ºTAXA. ')
+                print('---' * 30)
+                for c, v in enumerate(copia_dados):
+                    for d in v.values():
+                        print(f"  {str(d).replace('[', '').replace(']', '').replace('', '')}", end=' ')
+                    print()
+                print()
+                print()
+                print('--' * 35)
+                print('--' * 35)
+                while True:
+                    voltar_menu_principal = str(input('Para voltar ao menu principal digite [V]:')).strip().upper()[0]
+                    if voltar_menu_principal == 'V':
+                        break
+                    else:
+                        print(f'\033[1;41mSOMENTE DIGITE A LETRA V PARA VOLTAR! :\033[0;0m')
+                print('--' * 35)
+                print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+                print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+                print('\n')
+
+
+
 
 
         elif opcao_menu == '3':

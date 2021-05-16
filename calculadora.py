@@ -79,8 +79,7 @@ while True:
 
     else:
         while True:
-            print(
-                f'\033[1;41mVALOR INVÁLIDO - SOMENTE NÚMEROS DE 1 A 4 QUE CORRESPONDEM AS MOEDAS CADASTRADAS:\033[0;0m')
+            print(f'\033[1;41mVALOR INVÁLIDO - SOMENTE NÚMEROS DE 1 A 4 QUE CORRESPONDEM AS MOEDAS CADASTRADAS:\033[0;0m')
             moeda_origem = str(input('Digite corretamente o cód da moeda de origem:?'))
             if moeda_origem == '1':
                 print('--' * 35)
@@ -139,8 +138,7 @@ while True:
                 print('PARA: MOEDA REAL - BRASIL')
                 print('--' * 35)
                 while converter_para == '1' and moeda_origem == '1':
-                    print(
-                        f'\033[1;41mESCOLHA OUTRA OPÇÃO: MOEDA DE DESTINO NÃO PODE SER IGUAL MOEDA DE ORIGEM\033[0;0m')
+                    print(f'\033[1;41mESCOLHA OUTRA OPÇÃO: MOEDA DE DESTINO NÃO PODE SER IGUAL MOEDA DE ORIGEM\033[0;0m')
                     converter_para = str(input('Converter para: [Digite o CÓD DA MOEDA/DESTINO]: ?'))
                     print('--' * 35)
                 break
@@ -151,8 +149,7 @@ while True:
                 print('PARA: MOEDA DÓLAR - EUA')
                 print('--' * 35)
                 while converter_para == '2' and moeda_origem == '2':
-                    print(
-                        f'\033[1;41mESCOLHA OUTRA OPÇÃO: MOEDA DE DESTINO NÃO PODE SER IGUAL MOEDA DE ORIGEM\033[0;0m')
+                    print(f'\033[1;41mESCOLHA OUTRA OPÇÃO: MOEDA DE DESTINO NÃO PODE SER IGUAL MOEDA DE ORIGEM\033[0;0m')
                     converter_para = str(input('Converter para: [Digite o CÓD DA MOEDA/DESTINO]: ?'))
                     print('--' * 35)
                 break
@@ -163,8 +160,7 @@ while True:
                 print('--' * 35)
 
                 while converter_para == '3' and moeda_origem == '3':
-                    print(
-                        f'\033[1;41mESCOLHA OUTRA OPÇÃO: MOEDA DE DESTINO NÃO PODE SER IGUAL MOEDA DE ORIGEM\033[0;0m')
+                    print(f'\033[1;41mESCOLHA OUTRA OPÇÃO: MOEDA DE DESTINO NÃO PODE SER IGUAL MOEDA DE ORIGEM\033[0;0m')
                     converter_para = str(input('Converter para: [Digite o CÓD DA MOEDA/DESTINO]: ?'))
                     print('--' * 35)
                 break
