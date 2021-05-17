@@ -1,17 +1,17 @@
 from time import sleep
 
-dados = {}
-lista_de_dados = []
-lista_principal = []
-copia_dados = []
-copia_dados_a = {}
-codigo_cliente = 0
-busca_por_cod = {}
-busca_por_nome = {}
-busca_por_telefone = {}
-busca_por_data = {}
-moeda_origem = 'R$:'
-moeda_destino = 'U$$:'
+dados = {} ### --> DICIONÁRIO RECEBE TODOS OS DADOS COM SEUS RESPECTIVOS VALORES; ID, NOME ETC...
+lista_de_dados = [] ### --> RECEBE UMA CÓPIA PARCIAL - PARA BUSCA - ESTUDA-SE EXCLUIR VÁRIÁVEL - AVERIGUAR
+lista_principal = []### --> RECEBE UMA CÓPIA PARCIAL - PARA BUSCA - ESTUDA-SE EXCLUIR VÁRIÁVEL - AVERIGUAR
+copia_dados = []### --> DICIONÁRIO RECEBE TODOS OS DADOS
+copia_dados_a = {} ### --> DICIONÁRIO RECEBE UMA CÓPIA DA VÁRIÁVEL DADOS
+codigo_cliente = 0 ### --> CONTADOR CONTAGEM TRANSAÇÕES
+busca_por_cod = {} ### --> CONTADOR CONTAGEM TRANSAÇÕES
+busca_por_nome = {} ### --> CONTADOR CONTAGEM TRANSAÇÕES
+moeda_origem = 'R$:' ### --> VARIÁVEL EM USO
+moeda_destino = 'U$$:' ### --> VARIÁVEL EM USO
+valor_tot_operacoes = float(0)
+valor_tot_operacoes_a = float(0)
 
 
 print('--' * 35)
@@ -36,12 +36,10 @@ while True:
                 print(f'\033[7;40m{"   CADASTRAR CLIENTES  ":*^70}\033[0;0m')
                 print('--' * 35)
                 codigo_cliente += 1
-                cod_cadastro_cliente = str(codigo_cliente).upper()
-                lista_de_dados.append(cod_cadastro_cliente)
-                print(f' --> {codigo_cliente}º Cadastro e Nº do Cliente [ {codigo_cliente} ]')
+                codigo_cliente_convertida = str(codigo_cliente)
+                print(f' --> {codigo_cliente}º Cadastro e Nº do Cliente [ {codigo_cliente_convertida} ]')
                 dados['Cód'] = [codigo_cliente]
-                # print('--' * 35)
-                # print(f'TESTE DADOS EM FORMA DE DICIONÁRIOS: {dados.values()}')
+                lista_de_dados.append(codigo_cliente_convertida)
                 print('--' * 35)
                 nome = str(input('Digite o nome do cliente:?')).strip().upper()
                 dados['Nome'] = [nome]
@@ -228,6 +226,20 @@ while True:
                 valor_original = str(input(f'Valor original:? {moeda_origem}'))
                 dados['Valor Original'] = [valor_original]
                 lista_de_dados.append(valor_original)
+                convertendo_valor = float(valor_original)
+                valor_tot_operacoes += convertendo_valor
+                print(f'1testando valor total de operações: {valor_tot_operacoes}') ### --- > VERIFICAR
+                # if valor_original != '0':
+                #     valor_tot_operacoes = float(valor_original)
+                #     valor_tot_operacoes_a = float(valor_original)
+                #
+                #
+                #     print(f'1testando valor total de operações: {valor_tot_operacoes}')
+                #
+                # elif valor_original != '0' and codigo_cliente > 1:
+                #     soma_tot_operacoes = valor_tot_operacoes+valor_tot_operacoes_a
+                #     print(f'2testando valor total de operações: {soma_tot_operacoes}')
+
                 # print(f'TESTE VALOR ORIGINAL: {dados}')
                 print('--' * 30)
                 valor_convertido = str(input(f'Valor convertido:? {moeda_destino}'))
@@ -243,36 +255,17 @@ while True:
                 print('--' * 30)
                 copia_dados.append(dados.copy())
                 lista_principal.append(lista_de_dados)
+
+                dados_p_copia_cod = lista_principal[-1][0]
+                busca_por_cod[dados_p_copia_cod] = lista_principal
+
                 dados_p_copia_nome = lista_principal[-1][1]
                 busca_por_nome[dados_p_copia_nome] = lista_principal
 
-                dados_p_copia_data = lista_principal[-1][4]
-                busca_por_data[dados_p_copia_data] = lista_principal
-                ###---> TRABALHANDO AQUI...
-                # dados_p_copia_nome = dados[-1][1]
-                # print(f'TESTE LISTA CÓPA DE DADOS: {copia_dados}')
-                print('--' * 30)
-                # dados.clear()
-                # print(f'TESTE LISTA NORMAL DE DADOS: {dados}')
 
                 print('--' * 30)
 
-                # --> NÃO APAGAR OS CÓDIGOS ABAIXO <--
-                # --> ESSA SOLUÇÃO SERIA PARA LISTAR TODOS OS CLIENTES E INFORMAÇÕES <--
-                # print(' --------------------  |SEQUÊNCIA E ORDEM DE COLUNAS|  -------------- VALORES -------------')
-                # print('1ºCÓD:|2ºNOME:        |3ºMOED ORIG. |4º MOED DEST.  |5º DATA:   |6ºORIGI:|7ºCONV:|8ºTAXA. ')
-                # print('---' * 30)
-                # for c, v in enumerate(copia_dados):
-                #     for d in v.values():
-                #         print(f"  {str(d).replace('[','').replace(']','').replace('','')}",end=' ')
-                #     print()
-
-
-
-
-
-
-
+                print('--' * 30)
 
                 while True:
                     print('')
@@ -400,37 +393,45 @@ while True:
                     print()
                 print()
                 print()
-                while True:
-                    pesquisa = str(input('Digite cliente ou dados a pesquisar:?')).upper()
 
-                    if pesquisa in busca_por_nome.keys():
-                        print('--' * 35)
-                        print(f'\033[1;42mBusca Realizada com sucesso !\033[0;0m')
-                        print(f'A busca com esse nome pertence ao cadastro')
-                        print(f'{busca_por_nome[f"{pesquisa}"]}')
-                        print('--' * 35)
-
-                    elif pesquisa in busca_por_data.keys():
-                        print('--' * 35)
-                        print(f'\033[1;42mBusca Realizada com sucesso !\033[0;0m')
-                        print(f'A busca com esse nome pertence ao cadastro')
-                        print(f'{busca_por_data[f"{pesquisa}"]}')
-                        print('--' * 35)
-
-                    else:
-                        print(f'Infelizmente não conseguimos encontrar nenhum id com esse número !')
-
-                # busca_dados_var = f'{copia_dados}'.index(busca_dados_dicionario)
-                # print(f'{dados}')
 
                 print('--' * 35)
                 print('--' * 35)
                 while True:
-                    voltar_menu_principal = str(input('Para voltar ao menu principal digite [S]-SAIR:')).strip().upper()[0]
+                    voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
                     if voltar_menu_principal == 'S':
                         break
+
+                    # elif voltar_menu_principal == 'P':
+                    #     while True:
+                    #         pesquisa = str(input('Busca somente por:[NOME COMPLETO] se desejar sair digite [S]-SAIR:?')).upper()
+                    #
+                    #         if pesquisa in busca_por_nome.keys():
+                    #             print('--' * 35)
+                    #             print(f'\033[1;42mBusca Realizada com sucesso !\033[0;0m')
+                    #             print(f'A busca com esse nome pertence ao cadastro')
+                    #             print(f'{busca_por_nome[f"{pesquisa}"]}')
+                    #             print('--' * 35)
+                    #
+                    #         elif pesquisa in busca_por_cod.keys():
+                    #             print('--' * 35)
+                    #             print(f'\033[1;42mBusca Realizada com sucesso !\033[0;0m')
+                    #             print(f'A busca com esse número de id pertence ao cadastro')
+                    #             print(f'{busca_por_cod[f"{pesquisa}"]}')
+                    #             print('--' * 35)
+                    #
+                    #         elif pesquisa == 'S':
+                    #
+                    #             break
+                    #
+                    #
+                    #         else:
+                    #             print(
+                    #                 f'\033[1;41mInfelizmente não conseguimos encontrar nada com esse dado ! Tente novamente digitando de forma diferente\033[0;0m')
+
+
                     else:
-                        print(f'\033[1;41mSOMENTE DIGITE A LETRA V PARA VOLTAR! :\033[0;0m')
+                        print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
                 print('--' * 35)
                 print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
                 sleep(0.3)
@@ -452,10 +453,111 @@ while True:
 
 
 
-
-
         elif opcao_menu == '3':
-            print('(2b) - FALTA CONSTRUIR - ')
+
+            ### ---> FAZER SOMAR O VALOR TOTAL DAS OPERAÇÕES
+
+            if codigo_cliente == 0:
+                print('--' * 35)
+                print('        \033[1;40m    Aguarde ! AVERIGUANDO OPERAÇÕES\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m100%\033[0;0m', end='')
+                print('\033[1;40m   \033[0;0m', end='')
+                print('\n')
+
+                print('--' * 35)
+                print()
+                print()
+                print('\033[1;41mATÉ O PRESENTE MOMENTO NÃO HÁ NENHUMA OPERAÇÃO REALIZADA !\033[0;0m')
+                print()
+                print()
+                print('--' * 35)
+                print('--' * 35)
+                print('             \033[1;30m\033[1;43m     VOLTANDO AO MENU PRINCIPAL\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+                print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+                print('\n')
+
+            elif codigo_cliente > 0:
+                print('--' * 35)
+                print('        \033[1;40m    Aguarde ! AVERIGUANDO OPERAÇÕES\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m100%\033[0;0m', end='')
+                print('\033[1;40m   \033[0;0m', end='')
+                print('\n')
+                print('--' * 35)
+                print()
+                print()
+                print(f'\033[1;42mATÉ O PRESENTE MOMENTO VOCÊ TEM UM TOTAL DE: {codigo_cliente} \033[0;0m', end='')
+                if codigo_cliente == 1:
+                    print('\033[1;42mOPERAÇÃO !\033[0;0m')
+                else:
+                    print('\033[1;42mOPERAÇÕES !\033[0;0m')
+                print(f'SOMANDO UM VALOR TOTAL DE: R$: {valor_tot_operacoes}')
+                print()
+                print()
+                print('--' * 35)
+                print('--' * 35)
+                while True:
+                    voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+                    if voltar_menu_principal == 'S':
+                        break
+
+                print('--' * 35)
+                print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+                print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+                print('\n')
 
         elif opcao_menu == '4':
             print('(2c) - FALTA CONSTRUIR - ')
