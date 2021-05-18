@@ -8,10 +8,23 @@ copia_dados_a = {} ### --> DICIONÁRIO RECEBE UMA CÓPIA DA VÁRIÁVEL DADOS
 codigo_cliente = 0 ### --> CONTADOR CONTAGEM TRANSAÇÕES
 busca_por_cod = {} ### --> CONTADOR CONTAGEM TRANSAÇÕES
 busca_por_nome = {} ### --> CONTADOR CONTAGEM TRANSAÇÕES
-moeda_origem = 'R$:' ### --> VARIÁVEL EM USO
-moeda_destino = 'U$$:' ### --> VARIÁVEL EM USO
+moeda_origem_sigla = 'R$:' ### --> VARIÁVEL EM USO
+moeda_destino_sigla = 'U$$:' ### --> VARIÁVEL EM USO
 valor_tot_operacoes = float(0)
 valor_tot_operacoes_a = float(0)
+tot_taxas = float(0)
+tot_movimento_brasil_dolar_eua = float(0)
+tot_movimento_brasil_euro = float(0)
+tot_movimento_brasil_dolar_canada = float(0)
+tot_movimento_dolar_eua_brasil = float(0)
+tot_movimento_dolar_eua_euro = float(0)
+tot_movimento_dolar_eua_dolar_canada = float(0)
+tot_movimento_euro_brasil = float(0)
+tot_movimento_euro_dolar_eua = float(0)
+tot_movimento_euro_dolar_canada = float(0)
+tot_movimento_dolar_canada_brasil = float(0)
+tot_movimento_dolar_canada_dolar_eua = float(0)
+tot_movimento_dolar_canada_euro = float(0)
 
 
 print('--' * 35)
@@ -20,10 +33,15 @@ print('--' * 35)
 
 while True:
     print(f'     |-- {"OPÇÃO  ":-<2}{"   MENU   ":-^38}            |')
-    print(f'     |\033[7;40m{"--   1  ":.<3} |{" - CADASTRAR CLIENTES - ":^38}            \033[0;0m|')
-    print(f'     |{"--   2  ":.<3} |{" - LISTAR OPERAÇÕES - ":^38}            |')
-    print(f'     |\033[7;40m{"--   3  ":.<3} |{" - VALOR TOTAL DAS OPERAÇÕES - ":^38}            \033[0;0m|')
-    print(f'     |{"--   4  ":.<3} |{" - VALOR TOTAL DAS TAXAS COBRADAS - ":^38}            |')
+    print(f'     |\033[1;90m----------------------------------------------------------  \033[0;0m|')
+    print(f'     |\033[7;40m{" -> 1 <-":.<3}|{" - CADASTROS - CLIENTES - OPERAÇÕES ":^38}             \033[0;0m|')
+    print(f'     |\033[1;90m----------------------------------------------------------  \033[0;0m|')
+    print(f'     |{" -> 2 <-":.<3}|{"  - LISTAR OPERAÇÕES - ":^38}             |')
+    print(f'     |\033[1;90m----------------------------------------------------------  \033[0;0m|')
+    print(f'     |\033[7;40m{" -> 3 <-":.<3}|{"  - VALOR TOTAL DAS OPERAÇÕES - ":^38}             \033[0;0m|')
+    print(f'     |\033[1;90m----------------------------------------------------------  \033[0;0m|')
+    print(f'     |{" -> 4 <-":.<3}|{" - VALOR TOTAL DAS TAXAS COBRADAS - ":^38}             |')
+    print(f'     |\033[1;90m----------------------------------------------------------  \033[0;0m|')
     print('--' * 35)
     print(f'\033[7;40m{"   ESCOLHA UMA DAS OPÇÕES ACIMA:  ":*^70}\033[0;0m')
     print('--' * 35)
@@ -37,7 +55,7 @@ while True:
                 print('--' * 35)
                 codigo_cliente += 1
                 codigo_cliente_convertida = str(codigo_cliente)
-                print(f' --> {codigo_cliente}º Cadastro e Nº do Cliente [ {codigo_cliente_convertida} ]')
+                print(f' --> {codigo_cliente}º CLIENTE - ORDEM DE SERVIÇO DE Nº [ {codigo_cliente_convertida} ]')
                 dados['Cód'] = [codigo_cliente]
                 lista_de_dados.append(codigo_cliente_convertida)
                 print('--' * 35)
@@ -61,28 +79,28 @@ while True:
                 if moeda_origem == '1':
                     print('MOEDA DE ORIGEM: - REAL - BRASIL')
                     dados['Moeda origem'] = ['REAL - BRL']
-                    moeda_origem = 'R$:'
+                    moeda_origem_sigla = 'R$:'
                     lista_de_dados.append('REAL - BRL')
-                    # print(f'TESTE MOEDA DE ORIGEM: {dados}')
+                    # print(f'TESTE VÁRIAVEL ORIGEM BRASIL: {tot_movimento_brasil}')
 
                 elif moeda_origem == '2':
                     print('MOEDA DE ORIGEM: - DÓLAR - EUA')
                     dados['Moeda origem'] = ['DÓLAR - EUA']
-                    moeda_origem = 'U$$:'
+                    moeda_origem_sigla = 'U$$:'
                     lista_de_dados.append('DÓLAR - EUA')
                     # print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_origem == '3':
                     print('MOEDA DE ORIGEM: - EURO - EUROPA')
                     dados['Moeda origem'] = ['EURO']
-                    moeda_origem = '€:'
+                    moeda_origem_sigla = '€:'
                     lista_de_dados.append('EURO')
                     # print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_origem == '4':
                     print('MOEDA DE ORIGEM: - DÓLAR - CANADÁ')
                     dados['Moeda origem'] = ['DÓLAR - CAD']
-                    moeda_origem = 'U$$:'
+                    moeda_origem_sigla = 'U$$:'
                     lista_de_dados.append('DÓLAR - CAD')
                     # print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
@@ -102,7 +120,7 @@ while True:
                         if moeda_origem == '1':
                             print('MOEDA DE ORIGEM: - REAL - BRASIL')
                             dados['Moeda origem'] = ['REAL - BRL']
-                            moeda_origem = 'R$:'
+                            moeda_origem_sigla = 'R$:'
                             lista_de_dados.append('REAL - BRL')
                             # print(f'TESTE MOEDA DE ORIGEM: {dados}')
                             break
@@ -110,7 +128,7 @@ while True:
                         elif moeda_origem == '2':
                             print('MOEDA DE ORIGEM: - DÓLAR - EUA')
                             dados['Moeda origem'] = ['DÓLAR - EUA']
-                            moeda_origem = 'U$$:'
+                            moeda_origem_sigla = 'U$$:'
                             lista_de_dados.append('DÓLAR - EUA')
                             # print(f'TESTE MOEDA DE ORIGEM: {dados}')
                             break
@@ -118,7 +136,7 @@ while True:
                         elif moeda_origem == '3':
                             print('MOEDA DE ORIGEM: - EURO - EUROPA')
                             dados['Moeda origem'] = ['EURO']
-                            moeda_origem = '€:'
+                            moeda_origem_sigla = '€:'
                             lista_de_dados.append('EURO')
                             # print(f'TESTE MOEDA DE ORIGEM: {dados}')
                             break
@@ -126,7 +144,7 @@ while True:
                         elif moeda_origem == '4':
                             print('MOEDA DE ORIGEM: - DÓLAR - CANADÁ')
                             dados['Moeda origem'] = ['DÓLAR - CAD']
-                            moeda_origem = 'U$$:'
+                            moeda_origem_sigla = 'U$$:'
                             lista_de_dados.append('DÓLAR - CAD')
                             # print(f'TESTE MOEDA DE ORIGEM: {dados}')
                             break
@@ -145,28 +163,28 @@ while True:
                 if moeda_destino == '1':
                     print('MOEDA DE DESTINO: - REAL - BRASIL')
                     dados['Moeda destino'] = ['REAL - BRASIL']
-                    moeda_destino = 'R$:'
+                    moeda_destino_sigla = 'R$:'
                     lista_de_dados.append('REAL - BRASIL')
                     # print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_destino == '2':
                     print('MOEDA DE DESTINO: - DÓLAR - EUA')
                     dados['Moeda destino'] = ['DÓLAR - EUA']
-                    moeda_destino = 'U$$:'
+                    moeda_destino_sigla = 'U$$:'
                     lista_de_dados.append('DÓLAR - EUA')
                     # print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_destino == '3':
                     print('MOEDA DE DESTINO: - EURO - EUROPA')
                     dados['Moeda destino'] = ['EURO']
-                    moeda_destino = '€:'
+                    moeda_destino_sigla = '€:'
                     lista_de_dados.append('EURO')
                     # print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
                 elif moeda_destino == '4':
                     print('MOEDA DE DESTINO: - DÓLAR - CANADÁ')
                     dados['Moeda destino'] = ['DÓLAR CAD']
-                    moeda_destino = 'U$$:'
+                    moeda_destino_sigla = 'U$$:'
                     lista_de_dados.append('DÓLAR CAD')
                     # print(f'TESTE MOEDA DE ORIGEM: {dados}')
 
@@ -187,7 +205,7 @@ while True:
                         if moeda_destino == '1':
                             print('MOEDA DE DESTINO: - REAL - BRASIL')
                             dados['Moeda destino'] = ['REAL - BRASIL']
-                            moeda_destino = 'R$:'
+                            moeda_destino_sigla = 'R$:'
                             lista_de_dados.append('REAL - BRASIL')
                             # print(f'TESTE MOEDA DE ORIGEM: {dados}')
                             break
@@ -195,7 +213,7 @@ while True:
                         elif moeda_destino == '2':
                             print('MOEDA DE DESTINO: - DÓLAR - EUA')
                             dados['Moeda destino'] = ['DÓLAR - EUA']
-                            moeda_destino = 'U$$:'
+                            moeda_destino_sigla = 'U$$:'
                             lista_de_dados.append('DÓLAR - EUA')
                             # print(f'TESTE MOEDA DE ORIGEM: {dados}')
                             break
@@ -203,7 +221,7 @@ while True:
                         elif moeda_destino == '3':
                             print('MOEDA DE DESTINO: - EURO - EUROPA')
                             dados['Moeda destino'] = ['EURO']
-                            moeda_destino = '€:'
+                            moeda_destino_sigla = '€:'
                             lista_de_dados.append('EURO')
                             # print(f'TESTE MOEDA DE ORIGEM: {dados}')
                             break
@@ -211,7 +229,7 @@ while True:
                         elif moeda_destino == '4':
                             print('MOEDA DE DESTINO: - DÓLAR - CANADÁ')
                             dados['Moeda destino'] = ['DÓLAR CAD']
-                            moeda_destino = 'U$$:'
+                            moeda_destino_sigla = 'U$$:'
                             lista_de_dados.append('DÓLAR CAD')
                             # print(f'TESTE MOEDA DE ORIGEM: {dados}')
                             break
@@ -223,32 +241,108 @@ while True:
                 lista_de_dados.append(data_operacao)
                 # print(f'TESTE DATA: {dados}')
                 print('--' * 30)
-                valor_original = str(input(f'Valor original:? {moeda_origem}'))
+                valor_original = str(input(f'Valor original:? {moeda_origem_sigla}'))
                 dados['Valor Original'] = [valor_original]
                 lista_de_dados.append(valor_original)
                 convertendo_valor = float(valor_original)
                 valor_tot_operacoes += convertendo_valor
-                print(f'1testando valor total de operações: {valor_tot_operacoes}') ### --- > VERIFICAR
-                # if valor_original != '0':
-                #     valor_tot_operacoes = float(valor_original)
-                #     valor_tot_operacoes_a = float(valor_original)
-                #
-                #
-                #     print(f'1testando valor total de operações: {valor_tot_operacoes}')
-                #
-                # elif valor_original != '0' and codigo_cliente > 1:
-                #     soma_tot_operacoes = valor_tot_operacoes+valor_tot_operacoes_a
-                #     print(f'2testando valor total de operações: {soma_tot_operacoes}')
+                if moeda_origem == '1' and moeda_destino == '2':
+                    convertendo_valor_brasil = float(valor_original)
+                    tot_movimento_brasil_dolar_eua += convertendo_valor_brasil
+                    print(f'- 1 e 2 - TESTE VÁRIAVEL ORIGEM BRASIL: {tot_movimento_brasil_dolar_eua:.2f}')
 
-                # print(f'TESTE VALOR ORIGINAL: {dados}')
+                # tot_movimento_brasil_euro = float(0)
+
+                elif moeda_origem == '1' and moeda_destino == '3':
+                    convertendo_valor_brasil_euro = float(valor_original)
+                    tot_movimento_brasil_euro += convertendo_valor_brasil_euro
+                    print(f'- 1 e 3 -TESTE VÁRIAVEL ORIGEM BRASIL: {tot_movimento_brasil_euro:.2f}')
+
+                # tot_movimento_brasil_dolar_canada = float(0)
+
+                elif moeda_origem == '1' and moeda_destino == '4':
+                    convertendo_valor_brasil_dolar_canada = float(valor_original)
+                    tot_movimento_brasil_dolar_canada += convertendo_valor_brasil_dolar_canada
+                    print(f'- 1 e 4 -TESTE VÁRIAVEL ORIGEM BRASIL: {tot_movimento_brasil_dolar_canada:.2f}')
+
+                # tot_movimento_dolar_eua_brasil = float(0)
+
+                if moeda_origem == '2' and moeda_destino == '1':
+                    convertendo_valor_eua_brasil = float(valor_original)
+                    tot_movimento_dolar_eua_brasil += convertendo_valor_eua_brasil
+                    print(f'- 2 e 1 -TESTE VÁRIAVEL ORIGEM EUA: {tot_movimento_dolar_eua_brasil:.2f}')
+
+
+                # tot_movimento_dolar_eua_euro = float(0)
+
+                elif moeda_origem == '2' and moeda_destino == '3':
+                    convertendo_valor_eua_euro = float(valor_original)
+                    tot_movimento_dolar_eua_euro += convertendo_valor_eua_euro
+                    print(f'- 2 e 3 -TESTE VÁRIAVEL ORIGEM EUA: {tot_movimento_dolar_eua_euro:.2f}')
+
+
+                # tot_movimento_dolar_eua_dolar_canada = float(0)
+
+                elif moeda_origem == '2' and moeda_destino == '4':
+                    convertendo_valor_eua_canada = float(valor_original)
+                    tot_movimento_dolar_eua_dolar_canada += convertendo_valor_eua_canada
+                    print(f'- 2 e 4 -TESTE VÁRIAVEL ORIGEM EUA: {tot_movimento_dolar_eua_dolar_canada:.2f}')
+
+                # tot_movimento_euro_brasil = float(0)
+
+                if moeda_origem == '3' and moeda_destino == '1':
+                    convertendo_valor_euro_brasil = float(valor_original)
+                    tot_movimento_euro_brasil += convertendo_valor_euro_brasil
+                    print(f'- 3 e 1 -TESTE VÁRIAVEL ORIGEM EURO: {tot_movimento_euro_brasil:.2f}')
+
+
+                # tot_movimento_euro_dolar_eua = float(0)
+
+                elif moeda_origem == '3' and moeda_destino == '2':
+                    convertendo_valor_euro_eua = float(valor_original)
+                    tot_movimento_euro_dolar_eua += convertendo_valor_euro_eua
+                    print(f'- 3 e 2 -TESTE VÁRIAVEL ORIGEM EURO: {tot_movimento_euro_dolar_eua:.2f}')
+
+                # tot_movimento_euro_dolar_canada = float(0)
+
+                elif moeda_origem == '3' and moeda_destino == '4':
+                    convertendo_valor_euro_canada = float(valor_original)
+                    tot_movimento_euro_dolar_canada += convertendo_valor_euro_canada
+                    print(f'- 3 e 4 -TESTE VÁRIAVEL ORIGEM EURO: {tot_movimento_euro_dolar_canada:.2f}')
+
+                # tot_movimento_dolar_canada_brasil = float(0)
+
+                if moeda_origem == '4' and moeda_destino == '1':
+                    convertendo_valor_canada_brasil = float(valor_original)
+                    tot_movimento_dolar_canada_brasil += convertendo_valor_canada_brasil
+                    print(f'- 4 e 1 -TESTE VÁRIAVEL ORIGEM CANADÁ: {tot_movimento_dolar_canada_brasil:.2f}')
+
+                # tot_movimento_dolar_canada_dolar_eua = float(0)
+
+                elif moeda_origem == '4' and moeda_destino == '2':
+                    convertendo_valor_canada_eua = float(valor_original)
+                    tot_movimento_dolar_canada_dolar_eua += convertendo_valor_canada_eua
+                    print(f'- 4 e 2 -TESTE VÁRIAVEL ORIGEM CANADÁ: {tot_movimento_dolar_canada_dolar_eua:.2f}')
+
+                # tot_movimento_dolar_canada_euro = float(0)
+
+                elif moeda_origem == '4' and moeda_destino == '3':
+                    convertendo_valor_canada_euro = float(valor_original)
+                    tot_movimento_dolar_canada_euro += convertendo_valor_canada_euro
+                    print(f'- 4 e 3 -TESTE VÁRIAVEL ORIGEM CANADÁ: {tot_movimento_dolar_canada_euro:.2f}')
+
+
                 print('--' * 30)
-                valor_convertido = str(input(f'Valor convertido:? {moeda_destino}'))
+                valor_convertido = str(input(f'Valor convertido:? {moeda_destino_sigla}'))
 
                 dados['Valor Convertido'] = [valor_convertido]
                 lista_de_dados.append(valor_convertido)
                 # print(f'TESTE VALOR CONVERTIDO: {dados}')
                 print('--' * 30)
                 taxa_cobrada = str(input(f'Taxa cobrada:? R$:'))
+                conversao_taxa = float(taxa_cobrada)
+                tot_taxas += conversao_taxa
+                # print(f'TESTANDO SOMA TAXAS: {tot_taxas:.2f}')
                 dados['Taxa Cobrada'] = [taxa_cobrada]
                 lista_de_dados.append(taxa_cobrada)
                 # print(f'TESTE LISTA NORMAL DE DADOS: {dados}')
@@ -264,12 +358,12 @@ while True:
 
 
                 print('--' * 30)
-
+                print('\033[1;90m----------------------- FIM CADASTRO -----------------------\033[0;0m')
                 print('--' * 30)
 
                 while True:
-                    print('')
                     continua_cadastro = str(input('\nCadastrar mais clientes:? [C - P/ CONTINUAR OU S - P/ SAIR]:?')).strip().upper()[0]
+                    print('')
 
                     if continua_cadastro == 'C':
                         break
@@ -402,34 +496,6 @@ while True:
                     if voltar_menu_principal == 'S':
                         break
 
-                    # elif voltar_menu_principal == 'P':
-                    #     while True:
-                    #         pesquisa = str(input('Busca somente por:[NOME COMPLETO] se desejar sair digite [S]-SAIR:?')).upper()
-                    #
-                    #         if pesquisa in busca_por_nome.keys():
-                    #             print('--' * 35)
-                    #             print(f'\033[1;42mBusca Realizada com sucesso !\033[0;0m')
-                    #             print(f'A busca com esse nome pertence ao cadastro')
-                    #             print(f'{busca_por_nome[f"{pesquisa}"]}')
-                    #             print('--' * 35)
-                    #
-                    #         elif pesquisa in busca_por_cod.keys():
-                    #             print('--' * 35)
-                    #             print(f'\033[1;42mBusca Realizada com sucesso !\033[0;0m')
-                    #             print(f'A busca com esse número de id pertence ao cadastro')
-                    #             print(f'{busca_por_cod[f"{pesquisa}"]}')
-                    #             print('--' * 35)
-                    #
-                    #         elif pesquisa == 'S':
-                    #
-                    #             break
-                    #
-                    #
-                    #         else:
-                    #             print(
-                    #                 f'\033[1;41mInfelizmente não conseguimos encontrar nada com esse dado ! Tente novamente digitando de forma diferente\033[0;0m')
-
-
                     else:
                         print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
                 print('--' * 35)
@@ -524,13 +590,197 @@ while True:
                 print('\n')
                 print('--' * 35)
                 print()
+                print(f'\033[1;42mATÉ O PRESENTE MOMENTO VOCÊ TEM UM TOTAL DE: {codigo_cliente} \033[0;0m', end='')
+                if codigo_cliente == 1:
+                    print('\033[1;42mOPERAÇÃO !\033[0;0m')
+                else:
+                    print('\033[1;42mOPERAÇÕES !\033[0;0m')
+
+                if tot_movimento_brasil_dolar_eua > 0:
+                    print(f'DE: BRL - BRASIL / PARA: DÓLAR - EUA / MOVIMENTAÇÃO TOTAL DÊ R$: {tot_movimento_brasil_dolar_eua:.2f} REAIS.')
+
+                if tot_movimento_brasil_euro > 0:
+                    print(f'DE: BRL - BRASIL / PARA: EURO - EUROPA / MOVIMENTAÇÃO TOTAL DÊ R$: {valor_tot_operacoes:.2f} REAIS.')
+
+                if tot_movimento_brasil_dolar_canada > 0:
+                    print(f'DE: BRL - BRASIL / PARA: DÓLAR - CANADÁ / MOVIMENTAÇÃO TOTAL DÊ R$: {tot_movimento_brasil_dolar_canada:.2f} REAIS.')
+
+                if tot_movimento_dolar_eua_brasil > 0:
+                    print(f'DE: DÓLAR - EUA / PARA: BRL - BRASIL / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_eua_brasil:.2f} DÓLAR')
+
+                if tot_movimento_dolar_eua_euro > 0:
+                    print(f'DE: DÓLAR - EUA / PARA: EURO - EUROPA / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_eua_euro:.2f} DÓLAR')
+
+                if tot_movimento_dolar_eua_dolar_canada > 0:
+                    print(f'DE: DÓLAR - EUA / PARA: DÓLAR - CANADÁ / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_eua_dolar_canada:.2f} DÓLAR')
+
+                if tot_movimento_euro_brasil > 0:
+                    print(f'DE: EURO - EUROPA / PARA: BRL - BRASIL / MOVIMENTAÇÃO TOTAL DÊ €: {tot_movimento_euro_brasil:.2f} EURO.')
+
+                if tot_movimento_euro_dolar_eua > 0:
+                    print(f'DE: EURO - EUROPA / PARA: DÓLAR - EUA / MOVIMENTAÇÃO TOTAL DÊ €: {tot_movimento_euro_dolar_eua:.2f} EURO.')
+
+                if tot_movimento_euro_dolar_canada > 0:
+                    print(f'DE: EURO - EUROPA / PARA: DÓLAR - CANADÁ / MOVIMENTAÇÃO TOTAL DÊ €: {tot_movimento_euro_dolar_canada:.2f} EURO.')
+
+                if tot_movimento_dolar_canada_brasil > 0:
+                    print(f'DE: DÓLAR - CANADÁ / PARA: BRL - BRASIL / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_canada_brasil:.2f} DÓLAR')
+
+                if tot_movimento_dolar_canada_dolar_eua > 0:
+                    print(f'DE: DÓLAR - CANADÁ / PARA: DÓLAR - EUA / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_canada_dolar_eua:.2f} DÓLAR')
+
+                if tot_movimento_dolar_canada_euro > 0:
+                    print(f'DE: DÓLAR - CANADÁ / PARA: EURO - EUROPA / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_canada_euro:.2f} DÓLAR')
+
+                print()
+                print()
+                print()
+                print('--' * 35)
+                print('--' * 35)
+                while True:
+                    voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+                    if voltar_menu_principal == 'S':
+                        break
+
+                    else:
+                        print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+
+                print('--' * 35)
+                print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+                print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+                print('\n')
+
+        elif opcao_menu == '4':
+
+            if codigo_cliente == 0:
+                print('--' * 35)
+                print('        \033[1;40m    Aguarde ! AVERIGUANDO SISTEMA\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m100%\033[0;0m', end='')
+                print('\033[1;40m   \033[0;0m', end='')
+                print('\n')
+
+                print('--' * 35)
+                print()
+                print()
+                print('\033[1;41mATÉ O PRESENTE MOMENTO NÃO HÁ NENHUMA OPERAÇÃO REALIZADA !\033[0;0m')
+                print()
+                print()
+                print('--' * 35)
+                print('--' * 35)
+                print('             \033[1;30m\033[1;43m     VOLTANDO AO MENU PRINCIPAL\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+                print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+                print('\n')
+
+            elif codigo_cliente > 0:
+                print('--' * 35)
+                print('        \033[1;40m    Aguarde ! AVERIGUANDO SISTEMA\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.3)
+                print('\033[1;40m50%\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m.\033[0;0m', end='')
+                sleep(0.8)
+                print('\033[1;40m100%\033[0;0m', end='')
+                print('\033[1;40m   \033[0;0m', end='')
+                print('\n')
+                print('--' * 35)
                 print()
                 print(f'\033[1;42mATÉ O PRESENTE MOMENTO VOCÊ TEM UM TOTAL DE: {codigo_cliente} \033[0;0m', end='')
                 if codigo_cliente == 1:
                     print('\033[1;42mOPERAÇÃO !\033[0;0m')
                 else:
                     print('\033[1;42mOPERAÇÕES !\033[0;0m')
-                print(f'SOMANDO UM VALOR TOTAL DE: R$: {valor_tot_operacoes}')
+
+                print('\033[1;90m------------------------------------------------------------\033[0;0m')
+                print(f'SOMANDO TODAS AS ENTRADAS EM TAXA: TEMOS UM TOTAL DÊ: {tot_taxas:.2f} REAIS.')
+                print(f'AS MESMAS TAXAS SÃO REFERENTE AS DEVIDAS CONVERSÕES ABAIXO:')
+                print('\033[1;90m------------------------------------------------------------\033[0;0m')
+
+                if tot_movimento_brasil_dolar_eua > 0:
+                    print(f'DE: BRL - BRASIL / PARA: DÓLAR - EUA / MOVIMENTAÇÃO TOTAL DÊ R$: {tot_movimento_brasil_dolar_eua:.2f} REAIS.')
+
+                if tot_movimento_brasil_euro > 0:
+                    print(f'DE: BRL - BRASIL / PARA: EURO - EUROPA / MOVIMENTAÇÃO TOTAL DÊ R$: {valor_tot_operacoes:.2f} REAIS.')
+
+                if tot_movimento_brasil_dolar_canada > 0:
+                    print(f'DE: BRL - BRASIL / PARA: DÓLAR - CANADÁ / MOVIMENTAÇÃO TOTAL DÊ R$: {tot_movimento_brasil_dolar_canada:.2f} REAIS.')
+
+                if tot_movimento_dolar_eua_brasil > 0:
+                    print(f'DE: DÓLAR - EUA / PARA: BRL - BRASIL / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_eua_brasil:.2f} DÓLAR')
+
+                if tot_movimento_dolar_eua_euro > 0:
+                    print(f'DE: DÓLAR - EUA / PARA: EURO - EUROPA / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_eua_euro:.2f} DÓLAR')
+
+                if tot_movimento_dolar_eua_dolar_canada > 0:
+                    print(f'DE: DÓLAR - EUA / PARA: DÓLAR - CANADÁ / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_eua_dolar_canada:.2f} DÓLAR')
+
+                if tot_movimento_euro_brasil > 0:
+                    print(f'DE: EURO - EUROPA / PARA: BRL - BRASIL / MOVIMENTAÇÃO TOTAL DÊ €: {tot_movimento_euro_brasil:.2f} EURO.')
+
+                if tot_movimento_euro_dolar_eua > 0:
+                    print(f'DE: EURO - EUROPA / PARA: DÓLAR - EUA / MOVIMENTAÇÃO TOTAL DÊ €: {tot_movimento_euro_dolar_eua:.2f} EURO.')
+
+                if tot_movimento_euro_dolar_canada > 0:
+                    print(f'DE: EURO - EUROPA / PARA: DÓLAR - CANADÁ / MOVIMENTAÇÃO TOTAL DÊ €: {tot_movimento_euro_dolar_canada:.2f} EURO.')
+
+                if tot_movimento_dolar_canada_brasil > 0:
+                    print(f'DE: DÓLAR - CANADÁ / PARA: BRL - BRASIL / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_canada_brasil:.2f} DÓLAR')
+
+                if tot_movimento_dolar_canada_dolar_eua > 0:
+                    print(f'DE: DÓLAR - CANADÁ / PARA: DÓLAR - EUA / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_canada_dolar_eua:.2f} DÓLAR')
+
+                if tot_movimento_dolar_canada_euro > 0:
+                    print(f'DE: DÓLAR - CANADÁ / PARA: EURO - EUROPA / MOVIMENTAÇÃO TOTAL DÊ U$$: {tot_movimento_dolar_canada_euro:.2f} DÓLAR')
+
+                print()
                 print()
                 print()
                 print('--' * 35)
@@ -559,8 +809,6 @@ while True:
                 print('\033[1;30m\033[1;43m   \033[0;0m', end='')
                 print('\n')
 
-        elif opcao_menu == '4':
-            print('(2c) - FALTA CONSTRUIR - ')
 
         else:
             while True:
@@ -601,7 +849,4 @@ while True:
 
 # - FIM DO PROGRAMA
 
-
-
-# --> FIM CADASTRO
 
