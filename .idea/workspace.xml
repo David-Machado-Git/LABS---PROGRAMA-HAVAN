@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3adcd8c8-9a2f-40fd-a0ed-d56266ccd1f5" name="Default Changelist" comment="SEGUNDO PROGRAMA - GERENCIADOR - OPERAÇÕES. LABS HAVAN.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerenciador_operacoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador_operacoes.py" afterDir="false" />
-    </list>
+    <list default="true" id="3adcd8c8-9a2f-40fd-a0ed-d56266ccd1f5" name="Default Changelist" comment="SEGUNDO PROGRAMA - GERENCIADOR - OPERAÇÕES. LABS HAVAN." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,10 +26,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DESAFIO_APP_ACADEMY" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Python.gerenciador_operacoes">
+  <component name="RunManager" selected="Python.calculadora">
     <configuration name="calculadora" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LABS---PROGRAMA-HAVAN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,9 +95,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.calculadora" />
         <item itemvalue="Python.gerenciador_operacoes" />
         <item itemvalue="Python.teste_códigos" />
-        <item itemvalue="Python.calculadora" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +201,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621381986209</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="PROGRAMA - GERENCIADOR DE OPERAÇÕES - LABS HAVAN">
+      <created>1621446195725</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1621446195725</updated>
+    </task>
+    <task id="LOCAL-00015" summary="PROGRAMA - GERENCIADOR DE OPERAÇÕES - LABS HAVAN">
+      <created>1621446951359</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1621446951359</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,6 +238,7 @@
     <MESSAGE value="CONTINUAÇÃO - CALCULADORA - PROGRAMA LABS HAVAN DIA 12/05/2020" />
     <MESSAGE value="CALCULADORA CONVERSÃO DE MOEDAS. LABS HAVAN." />
     <MESSAGE value="SEGUNDO PROGRAMA - GERENCIADOR - OPERAÇÕES. LABS HAVAN." />
-    <option name="LAST_COMMIT_MESSAGE" value="SEGUNDO PROGRAMA - GERENCIADOR - OPERAÇÕES. LABS HAVAN." />
+    <MESSAGE value="PROGRAMA - GERENCIADOR DE OPERAÇÕES - LABS HAVAN" />
+    <option name="LAST_COMMIT_MESSAGE" value="PROGRAMA - GERENCIADOR DE OPERAÇÕES - LABS HAVAN" />
   </component>
 </project>
