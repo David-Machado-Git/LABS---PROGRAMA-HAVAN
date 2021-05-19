@@ -126,7 +126,6 @@ while True:
 
         else:
             quantia_convertida.append(float(valor_para_converter[0:]))
-            print(quantia_convertida)
             break
 
     while True:
@@ -213,6 +212,32 @@ while True:
         print(f'         \033[1;42m   Sendo assim com R$: {quantia_convertida[0]:.2f} Reais,       \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente U$$: {calculo_conversao:.2f} Dólar.   \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
+
 
     elif moeda_origem == '1' and converter_para == '3':
         moeda_origem = float(quantia_convertida[0])
@@ -226,6 +251,32 @@ while True:
         print(f'         \033[1;42m   Sendo assim com R$: {quantia_convertida[0]:.2f} Reais,       \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente €: {calculo_conversao:.2f} Euros.     \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
+
 
     elif moeda_origem == '1' and converter_para == '4':
         moeda_origem = float(quantia_convertida[0])
@@ -239,6 +290,31 @@ while True:
         print(f'         \033[1;42m   Sendo assim com R$: {quantia_convertida[0]:.2f} Reais,               \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente U$$: {calculo_conversao:.2f} Dólar Canadense.\033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
 
     if moeda_origem == '2' and converter_para == '1':
         moeda_origem = float(quantia_convertida[0])
@@ -252,6 +328,32 @@ while True:
         print(f'         \033[1;42m   Sendo assim com U$$: {quantia_convertida[0]:.2f} Dólar,        \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente R$: {calculo_conversao:.2f} Reais.    \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
+
 
     elif moeda_origem == '2' and converter_para == '3':
         moeda_origem = float(quantia_convertida[0])
@@ -265,6 +367,32 @@ while True:
         print(f'         \033[1;42m   Sendo assim com U$$: {quantia_convertida[0]:.2f} Dólar,      \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente R$: {calculo_conversao:.2f} Euros.   \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
+
 
     elif moeda_origem == '2' and converter_para == '4':
         moeda_origem = float(quantia_convertida[0])
@@ -278,6 +406,31 @@ while True:
         print(f'         \033[1;42m   Sendo assim com U$$: {quantia_convertida[0]:.2f} Dólar,                \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente U$$: {calculo_conversao:.2f} Dólar Canadense.  \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
 
     if moeda_origem == '3' and converter_para == '1':
         moeda_origem = float(quantia_convertida[0])
@@ -291,6 +444,32 @@ while True:
         print(f'         \033[1;42m   Sendo assim com €: {quantia_convertida[0]:.2f} Euros,                 \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente R$: {calculo_conversao:.2f} Reais Brasileiro.\033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
+
 
     elif moeda_origem == '3' and converter_para == '2':
         moeda_origem = float(quantia_convertida[0])
@@ -304,6 +483,32 @@ while True:
         print(f'         \033[1;42m   Sendo assim com €: {quantia_convertida[0]:.2f} Euros,              \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente U$$: {calculo_conversao:.2f} Dólar EUA.    \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
+
 
     elif moeda_origem == '3' and converter_para == '4':
         moeda_origem = float(quantia_convertida[0])
@@ -317,6 +522,31 @@ while True:
         print(f'         \033[1;42m   Sendo assim com €: {quantia_convertida[0]:.2f} Euros,                  \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente U$$: {calculo_conversao:.2f} Dólar Canadense.  \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
 
     if moeda_origem == '4' and converter_para == '1':
         moeda_origem = float(quantia_convertida[0])
@@ -331,6 +561,31 @@ while True:
             f'         \033[1;42m   Sendo assim com U$$: {quantia_convertida[0]:.2f} Dólar Canadense,        \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente R$: {calculo_conversao:.2f} Reais Brasileiro.   \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
 
     if moeda_origem == '4' and converter_para == '2':
         moeda_origem = float(quantia_convertida[0])
@@ -344,6 +599,31 @@ while True:
         print(f'         \033[1;42m   Sendo assim com U$$: {quantia_convertida[0]:.2f} Dólar Canadense, \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente U$$: {calculo_conversao:.2f} - Dólar EUA. \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
 
     if moeda_origem == '4' and converter_para == '3':
         moeda_origem = float(quantia_convertida[0])
@@ -357,6 +637,31 @@ while True:
         print(f'         \033[1;42m   Sendo assim com U$$: {quantia_convertida[0]:.2f} Dólar Canadense, \033[0;0m')
         print(f'         \033[1;42m   você tem exatamente €: {calculo_conversao:.2f} - Euros.       \033[0;0m')
         print('--' * 35)
+        while True:
+            voltar_menu_principal = str(input('Digite:[S]-SAIR:')).strip().upper()[0]
+            if voltar_menu_principal == 'S':
+                break
+
+            else:
+                print(f'\033[1;41mSOMENTE DIGITE A LETRA [S]-PARA SAIR! :\033[0;0m')
+        print('--' * 35)
+        print('             \033[1;30m\033[1;43m     CARREGANDO MENU PRINCIPAL\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.3)
+        print('\033[1;30m\033[1;43m50%\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m.\033[0;0m', end='')
+        sleep(0.8)
+        print('\033[1;30m\033[1;43m100%\033[0;0m', end='')
+        print('\033[1;30m\033[1;43m   \033[0;0m', end='')
+        print('\n')
 
     # print('\n                  --- | FIM DO PROGRAMA | ---')
 
